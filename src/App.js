@@ -6,7 +6,6 @@ import SearchBar from './components/SearchBar.jsx'
 function App() {
   const [cities, setCities] = useState([])
   const apiKey = process.env.react_app_apiKey
-
   function handleAddCity(city) {
     setCities((prevCities) => {
       return [city, ...prevCities]
@@ -43,7 +42,7 @@ function App() {
 
   return (
     <div className="App">
-      <SearchBar onSearch={onSearch} />
+      <SearchBar cities={cities} onSearch={onSearch} />
       <Cards cities={cities} onClose={handleRemoveCity} />
     </div>
   )

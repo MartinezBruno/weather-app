@@ -3,18 +3,15 @@ import { IoSearchOutline } from 'react-icons/io5'
 
 import styles from './SearchBar.module.css'
 
-export default function SearchBar({ onSearch }) {
+export default function SearchBar({ cities, onSearch }) {
   // acá va tu código
   function handleOnSearch(event) {
     event.preventDefault()
     if (typeof onSearch === 'function') {
       const input = document.getElementById('search-bar-input')
-      onSearch(input.value)
-<<<<<<< Updated upstream
-      input.value =""
-=======
+      if (cities.find(({ name }) => name === input.value)) alert('La ciudad ya se encuentra en la lista')
+      else onSearch(input.value)
       input.value = ''
->>>>>>> Stashed changes
     }
   }
 
