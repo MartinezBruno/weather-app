@@ -10,7 +10,11 @@ export default function SearchBar({ onSearch }) {
     if (typeof onSearch === 'function') {
       const input = document.getElementById('search-bar-input')
       onSearch(input.value)
+<<<<<<< Updated upstream
       input.value =""
+=======
+      input.value = ''
+>>>>>>> Stashed changes
     }
   }
 
